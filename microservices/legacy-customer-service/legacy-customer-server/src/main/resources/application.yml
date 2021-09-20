@@ -1,0 +1,29 @@
+spring.profiles.include: realdb, aws
+
+server.port: 7001
+server.error.include-message: always
+
+spring.application.name: legacy-customer
+
+localstack:
+  host: localhost
+
+logging:
+  level:
+#    org.
+#    org.caltech.miniswing: DEBUG
+    com:
+      querydsl:
+        sql: DEBUG
+    org:
+#      springframework: INFO
+#      springframework.web: DEBUG
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+
+---
+spring.profiles: docker
+
+server.port: 80

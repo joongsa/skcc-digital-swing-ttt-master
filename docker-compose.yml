@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  new-customer:
+    build: microservices/new-customer-server
+    mem_limit: 350m
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - TZ=Asia/Seoul
+    #depends_on:
+    #  mysql-plm:
+    #    condition: service_healthy
+
+  legacy-customer:
+    build: microservices/legacy-customer-service/legacy-customer-server
+    mem_limit: 350m
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - TZ=Asia/Seoul
+    #depends_on:
+    #  mysql-customer:
+    #    condition: service_healthy
+
+  gateway:
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    build: spring-cloud/gateway
+    mem_limit: 350m
+    ports:
+      - "8080:8080"

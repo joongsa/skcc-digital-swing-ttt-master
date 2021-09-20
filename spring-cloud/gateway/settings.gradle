@@ -1,0 +1,12 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'gateway'
+
+include ':util'
+include ':legacy-customer-client'
+
+project(':util').projectDir = file("../../util")
+project(':legacy-customer-client').projectDir = file("../../microservices/legacy-customer-service/legacy-customer-client")
