@@ -13,7 +13,7 @@ pipeline {
           steps {
             //sh 'chmod 777 gradlew'
             //sh './gradlew build'
-            sh 'gradle clean -b /var/lib/jenkins/workspace/awstest/microservices/new-customer-server/gradle.build'
+            sh 'gradle clean -b /var/lib/jenkins/workspace/awstest/microservices/new-customer-server/build.gradle'
           }
         }
 
