@@ -4,16 +4,16 @@ pipeline {
         stage('Git Progress') {
           steps {
             git credentialsId: 'jenkinsgit',
-            url: 'https://github.com/joongsa/skcc-digital-swing-ttt-master.git'
+            url: 'https://github.com/joongsa/skcc-digital-swing-ttt-master/tree/master/microservices/new-customer-server'
           }
         }
 
 
         stage('Gradle Build') {
           steps {
-            sh 'chmod 777 gradlew'
-            sh './gradlew build'
-            //sh 'gradle clean -b build.gradle'
+            //sh 'chmod 777 gradlew'
+            //sh './gradlew build'
+            sh 'gradle clean -b build.gradle'
           }
         }
 
