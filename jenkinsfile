@@ -4,7 +4,7 @@ pipeline {
         stage('Git Progress') {
           steps {
             git credentialsId: 'jenkinsgit',
-            url: 'https://github.com/joongsa/skcc-digital-swing-ttt-master/microservices/new-customer-server'
+            url: 'https://github.com/joongsa/skcc-digital-swing-ttt-master'
           }
         }
 
